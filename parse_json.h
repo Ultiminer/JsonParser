@@ -79,7 +79,7 @@ namespace JSON{
         JSON_DATA json; 
         while(std::getline(in,line))
         {  
-            const std::vector<JSON_DATA>& json_buffer=parseStr(line);
+            const std::vector<JSON_DATA>& json_buffer=parse(line);
             jsonList.insert(jsonList.begin(),json_buffer.begin(),json_buffer.end());
             line="";
         }
