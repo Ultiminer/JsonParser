@@ -28,7 +28,7 @@ namespace JSON{
         std::cout<<std::flush; 
     }
    
-    inline std::vector<JSON_DATA> parseStr(const std::string& jsonTxt)noexcept
+    inline std::vector<JSON_DATA> parse(const std::string& jsonTxt)noexcept
     {    
         std::vector<JSON_DATA> jsonList; 
         JSON_DATA json; 
@@ -70,7 +70,7 @@ namespace JSON{
         
         return jsonList; 
     }
-    inline std::vector<JSON_DATA> parseFile(const std::string& path)noexcept
+    inline std::vector<JSON_DATA> parse_file(const std::string& path)noexcept
     {
         if(path.find(".json")==std::string::npos){std::cout<<"Files need to end in .json!!!\n"<<std::flush; exit(EXIT_FAILURE);}
         std::ifstream in{path.c_str(),std::ios::binary};
@@ -88,7 +88,7 @@ namespace JSON{
 
         return jsonList; 
     }
-    inline std::string parseJson(const std::vector<JSON_DATA>& data)noexcept
+    inline std::string stringify(const std::vector<JSON_DATA>& data)noexcept
     {
         std::string ret=""; 
         for(auto& json:data)
